@@ -35,6 +35,13 @@ const UseStateExample = ({ count, setCount }: Tcount) => {
     setCount((prevState) => prevState - 1);
     setCount((prevState) => prevState - 1);
   };
+
+  const handleAsyncIncrease = () => {
+    setTimeout(() => {
+      //  setCount(count + 1); //  here count = starting value of count , It can not get the updated (if) value of the state
+      setCount((prevCount) => prevCount + 1); //  here prevCount =  updated (if) value of the count state
+    }, 3333);
+  };
   return (
     <div>
       <h1 className="text-4xl ">{count}</h1>
@@ -44,6 +51,12 @@ const UseStateExample = ({ count, setCount }: Tcount) => {
           onClick={handleIncrease}
         >
           Increase
+        </button>
+        <button
+          className="px-4 py-2 bg-green-400 rounded-lg text-white"
+          onClick={handleAsyncIncrease}
+        >
+          Async Increase
         </button>
         <button
           className="px-4 py-2 bg-red-400 rounded-lg text-white"

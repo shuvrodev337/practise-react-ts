@@ -9,7 +9,7 @@ const addOne = (num) => {
   return num + 1;
 };
 
-const addOneAndDouble = wrapperFunctoin(addOne);
+const addOneAndDouble = wrapperFunctoin(addOne); // wrapper function returns a function which takes num parameter
 console.log(addOneAndDouble(2));
 
 // Outer function er maddhome inner function er behaviour kichuta update korte pari, in a non destructive way.
